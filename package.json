@@ -22,7 +22,7 @@
     "test:update-snapshots": "karma start karma.conf.cjs --update-snapshots",
     "test:prune-snapshots": "karma start karma.conf.cjs --prune-snapshots",
     "checksize": "rollup -c ; cat my-element.bundled.js | gzip -9 | wc -c ; rm my-element.bundled.js",
-    "fraz": "rollup -c"
+    "build": "rollup -c"
   },
   "keywords": [
     "web-components",

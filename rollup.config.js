@@ -53,7 +53,7 @@ export default {
   // preserveSymlinks: true,
   input: ['dev/index.js'],
   output: {
-    file: 'build/index.js',
+    file: 'docs/index.js',
     format: 'es',
     sourcemap: true
   },

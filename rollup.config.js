@@ -17,31 +17,47 @@ import {terser} from 'rollup-plugin-terser';
 import resolve from 'rollup-plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 
+// export default {
+//   input: 'my-element.js',
+//   output: {
+//     file: 'my-element.bundled.js',
+//     format: 'esm',
+//   },
+//   onwarn(warning) {
+//     if (warning.code !== 'THIS_IS_UNDEFINED') {
+//       console.error(`(!) ${warning.message}`);
+//     }
+//   },
+//   plugins: [
+//     replace({'Reflect.decorate': 'undefined'}),
+//     resolve(),
+//     terser({
+//       module: true,
+//       warnings: true,
+//       mangle: {
+//         properties: {
+//           regex: /^__/,
+//         },
+//       },
+//     }),
+//     filesize({
+//       showBrotliSize: true,
+//     })
+//   ]
+// }
+
+// import resolve from 'rollup-plugin-node-resolve';
+
 export default {
-  input: 'my-element.js',
+  // If using any exports from a symlinked project, uncomment the following:
+  // preserveSymlinks: true,
+  input: ['dev/index.js'],
   output: {
-    file: 'my-element.bundled.js',
-    format: 'esm',
-  },
-  onwarn(warning) {
-    if (warning.code !== 'THIS_IS_UNDEFINED') {
-      console.error(`(!) ${warning.message}`);
-    }
+    file: 'build/index.js',
+    format: 'es',
+    sourcemap: true
   },
   plugins: [
-    replace({'Reflect.decorate': 'undefined'}),
-    resolve(),
-    terser({
-      module: true,
-      warnings: true,
-      mangle: {
-        properties: {
-          regex: /^__/,
-        },
-      },
-    }),
-    filesize({
-      showBrotliSize: true,
-    })
+    resolve()
   ]
-}
+};

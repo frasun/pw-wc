@@ -83,7 +83,7 @@ export class knowledgeItem extends LitElement {
             ${this.sources.map(source => html`
                 <mwc-list-item graphic="icon">
                   <mwc-icon slot="graphic">link</mwc-icon>
-                  ${source}
+                  <a href="${source}" target="_blank">${source}</a>
                 </mwc-list-item>
               `)}
           </mwc-list>
